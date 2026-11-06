@@ -1,0 +1,23 @@
+\newcommand{\GitHubURL}{https://github.com/gunasekharkaranam/gesture-mouse-keyboard}
+\newcommand{\Hardware}{an ordinary laptop CPU without a GPU}
+\newcommand{\Camera}{EDIT: e.g. built-in 720p laptop webcam}
+\newcommand{\DatasetSentence}{Because no public dataset matches our gesture set and our control setting, we recorded our own: 15378 labelled frames from 3 users (between 1880 and 2530 per gesture) and 0 hand-crop images.}
+\newcommand{\DatasetShort}{15378 keypoint samples and 0 hand crops from 3 users}
+\newcommand{\AccMLP}{99.74}
+\newcommand{\AccRules}{89.89}
+\newcommand{\LosoMLP}{96.64}
+\newcommand{\LosoRules}{89.83}
+\newcommand{\PersZero}{97.35}
+\newcommand{\PersK}{98.01}
+\newcommand{\ObsClassification}{Our MLP with the full feature set reaches 99.74\% accuracy (macro-F1 99.74\%) in 0.72\,ms per sample, compared with 89.89\% for the rule-based method. The feature design matters: the same MLP on raw coordinates reaches 99.67\%, so normalisation and shape features change accuracy by +0.07 points. Augmentation changes accuracy by -0.03 points on this split. Random Forest is slightly more accurate (99.84\%), but takes 10.87\,ms per sample, 15.1$\times$ the MLP's time. \Cref{fig:cm} shows the remaining confusions.}
+\newcommand{\ObsLoso}{Averaged over 3 held-out users, our MLP reaches 96.64\%, against 89.83\% for the rules, 90.19\% for the SVM and 93.88\% for an MLP on raw coordinates without augmentation. The hardest user is bhuvana (94.39\%), which motivates personalization (\cref{fig:personal}).}
+\newcommand{\ObsCNN}{The keypoint MLP is 0.20 points lower in accuracy than the CNN (99.74\% vs.\ 99.94\%), while being 6$\times$ faster and 12$\times$ smaller. Working on keypoints also removes the influence of background and lighting, which the CNN has to learn from data.}
+\newcommand{\ObsPers}{Averaged over 3 users, accuracy on a new user is 97.35\% without calibration and rises to 98.01\% with $K=20$ samples per gesture (about one second of recording per gesture).}
+\newcommand{\ObsFilter}{Compared with the raw cursor, the One-Euro filter reduces jitter by 38.5\% (from 4.21 to 2.59 px/frame) with 11\,ms of lag. The moving average gives 3.57 px/frame jitter but 64\,ms lag, and the Kalman filter 3.66 px/frame with 32\,ms lag. The One-Euro filter is the best trade-off because its cutoff rises with hand speed.}
+\newcommand{\ObsVoting}{Voting ($N{=}5,k{=}3$) lowers the number of gesture changes from 70.0 to 21.2 per minute and the short (1--2 frame) false segments from 31.0 to 0.3 per minute, and detects 30 clicks (without voting: 50) for the 30 the user made.}
+\newcommand{\ObsAnchor}{With the fingertip as anchor, the cursor moves 182.5\,px on average while the click is being made; with the knuckle it moves only 53.4\,px (71\% less), so small targets are not missed.}
+\newcommand{\ObsSystem}{The complete pipeline runs at 32.2 FPS with 11.5\,ms of processing per frame (95th percentile 14.8\,ms), i.e.\ in real time on a CPU.}
+\newcommand{\ObsClick}{\todo{Result not available yet: run \texttt{python experiments/click\_test.py --method gesture --user NAME}.}}
+\newcommand{\ObsTyping}{\todo{Result not available yet: run \texttt{python experiments/typing\_test.py --user NAME}.}}
+\newcommand{\ObsAbstract}{In experiments with 3 users, the system reaches 96.6\% gesture accuracy on users not seen in training (rule-based: 89.8\%), removes 38\% of the cursor jitter, cuts gesture flicker by 70\%, reduces cursor drift during a click by 71\% and runs at 32 FPS on a laptop CPU.}
+\newcommand{\ObsConclusion}{In experiments with 3 users, the system reaches 96.6\% gesture accuracy on users not seen in training (rule-based: 89.8\%), removes 38\% of the cursor jitter, cuts gesture flicker by 70\%, reduces cursor drift during a click by 71\% and runs at 32 FPS on a laptop CPU. Each proposed component gives a measurable improvement over the usual design, and together they make a webcam a practical touch-free mouse and keyboard.}

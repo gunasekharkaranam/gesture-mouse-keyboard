@@ -1,0 +1,34 @@
+\section{Code, repository and datasets}
+\label{sec:appendix}
+
+\noindent\textbf{Our GitHub repository:} \url{\GitHubURL}
+
+\medskip
+\noindent\textbf{Datasets used.}
+\begin{itemize}
+\item Our own recorded dataset (15,378 labelled hand-point frames and 7,692
+hand-crop images from 3 users, 7 gestures), in the repository under
+\texttt{data/}.
+\item Related public dataset (not used for training, listed for reference):
+HaGRID~\cite{kapitanov2024hagrid}, \url{https://github.com/hukenovs/hagrid}.
+\end{itemize}
+
+\noindent\textbf{Repositories and libraries used.}
+\begin{itemize}
+\item MediaPipe (hand landmarks): \url{https://github.com/google-ai-edge/mediapipe}
+\item OpenCV (camera and drawing): \url{https://github.com/opencv/opencv}
+\item PyTorch (neural networks): \url{https://github.com/pytorch/pytorch}
+\item scikit-learn (SVM, Random Forest, kNN baselines): \url{https://github.com/scikit-learn/scikit-learn}
+\item PyAutoGUI (mouse and keyboard events): \url{https://github.com/asweigart/pyautogui}
+\item python-pptx (slides): \url{https://github.com/scanny/python-pptx}
+\item CVPR author kit (this template): \url{https://github.com/cvpr-org/author-kit}
+\item One-Euro filter reference page: \url{https://gery.casiez.net/1euro/}
+\end{itemize}
+
+\noindent\textbf{How to run.} \texttt{pip install -r requirements.txt};
+record data with \texttt{python collect\_data.py --user NAME}; run every
+experiment with \texttt{python run\_all.py}; start the app with
+\texttt{python app.py}. Details are in \texttt{README.md}.
+
+\section{Complete source code}
+\input{auto/code_listings}

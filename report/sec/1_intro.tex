@@ -1,0 +1,54 @@
+\section{Introduction}
+\label{sec:intro}
+
+We touch a mouse and a keyboard all day. Sometimes touching them is a problem:
+a doctor wearing gloves, a cook with dirty hands, a teacher standing far from
+the laptop during a lecture, a shared screen in a public place, or a person
+who finds small devices hard to hold. Almost every laptop already has a
+webcam, so a mouse and keyboard that work with \emph{only the webcam} would
+cost nothing and help all these people.
+
+The idea is not new. Many open-source ``virtual mouse'' programs find the
+hand with MediaPipe~\cite{zhang2020mediapipe}, check which fingers are up with
+a few fixed rules, and move the cursor with the index fingertip. When we tried
+this approach, it worked in a demo but was hard to use for real work. We saw
+four problems:
+\begin{enumerate}
+\item \textbf{Rules break easily.} A slightly tilted hand, a hand far from the
+camera, or simply a different person makes the fixed thresholds fail.
+\item \textbf{The cursor shakes.} The detected hand points move a few pixels
+in every frame even when the hand is still, so small buttons are hard to hit.
+\item \textbf{The cursor jumps when you click.} To click, you pinch the thumb
+and index finger. This moves the fingertip, and the cursor goes with it, just
+when you need it to stay still.
+\item \textbf{False clicks.} When the hand changes from one gesture to another,
+the detector is wrong for a frame or two, and each wrong ``pinch'' frame
+becomes a click.
+\end{enumerate}
+
+Our project is about solving these four problems, and about \emph{measuring}
+that each fix really helps. We keep MediaPipe for finding the hand, and
+everything after it is our own work:
+
+\begin{itemize}
+\item \textbf{A learned gesture classifier on cleaned hand points
+(\cref{sec:features,sec:mlp}).} Before classification we remove the
+effect of hand position, size, tilt and left/right hand. A small neural
+network (an MLP with about 20\,k weights) then learns 7 gestures. We test it
+on a person it has never seen.
+\item \textbf{A stable cursor point (\cref{sec:cursor}).} The cursor follows the
+index-finger \emph{knuckle}, which hardly moves during a pinch.
+\item \textbf{A smart smoothing filter (\cref{sec:cursor}).} The One-Euro
+filter~\cite{casiez2012oneeuro} smooths strongly when the hand is slow and
+weakly when it is fast, so we get a steady cursor without delay.
+\item \textbf{Voting over time (\cref{sec:voting}).} A gesture counts only
+when it is seen in most of the last five frames with good confidence.
+\item \textbf{Extras that make it usable (\cref{sec:actions}).} An air keyboard
+with a ``hover-lock'' that types the right key, and a one-second
+personalization for a new user.
+\end{itemize}
+
+The rest of the report follows the same story. \Cref{sec:related} looks at
+what others have done. \Cref{sec:method} explains our method step by step,
+and why we chose each step. \Cref{sec:exp} tests every step with our own
+recorded data and live sessions. \Cref{sec:conclusion} sums up what we learned.

@@ -1,0 +1,13 @@
+              precision    recall  f1-score   support
+
+   idle_palm     0.9948    1.0000    0.9974       386
+       point     0.9980    0.9960    0.9970       506
+ pinch_index     1.0000    0.9979    0.9989       467
+pinch_middle     1.0000    0.9941    0.9970       506
+  two_finger     0.9902    0.9975    0.9938       404
+        fist     1.0000    1.0000    1.0000       376
+   thumbs_up     0.9977    0.9977    0.9977       431
+
+    accuracy                         0.9974      3076
+   macro avg     0.9972    0.9976    0.9974      3076
+weighted avg     0.9974    0.9974    0.9974      3076

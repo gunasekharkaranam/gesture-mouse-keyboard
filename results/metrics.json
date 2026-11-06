@@ -1,0 +1,69 @@
+{
+  "n_samples": 15378,
+  "users": [
+    "bhuvana",
+    "guna",
+    "raj"
+  ],
+  "ablation": [
+    {
+      "acc": 0.8988946684005201,
+      "macro_f1": 0.9004086900096872,
+      "latency_ms": 0.03347900000032193,
+      "method": "Rule-based (fingers up)"
+    },
+    {
+      "acc": 0.9973992197659298,
+      "macro_f1": 0.9974114989597737,
+      "latency_ms": 0.15011800000138464,
+      "method": "SVM (RBF), full features"
+    },
+    {
+      "acc": 0.9983745123537061,
+      "macro_f1": 0.99840743080788,
+      "latency_ms": 10.870850999999675,
+      "method": "Random Forest, full features"
+    },
+    {
+      "acc": 0.9977243172951885,
+      "macro_f1": 0.9977836809202605,
+      "latency_ms": 1.629999000015232,
+      "method": "kNN (k=5), full features"
+    },
+    {
+      "acc": 0.9967490247074122,
+      "macro_f1": 0.9967341698510518,
+      "latency_ms": 0.22170900000370847,
+      "params": 17287,
+      "method": "MLP, raw features"
+    },
+    {
+      "acc": 0.9980494148244473,
+      "macro_f1": 0.9980464917911925,
+      "latency_ms": 0.2926849999979216,
+      "params": 17287,
+      "method": "MLP, norm features"
+    },
+    {
+      "acc": 0.9980494148244473,
+      "macro_f1": 0.9980371481685575,
+      "latency_ms": 0.3165973333367825,
+      "params": 17287,
+      "method": "MLP, norm_rot features"
+    },
+    {
+      "acc": 0.9977243172951885,
+      "macro_f1": 0.9977731984382795,
+      "latency_ms": 0.7761786666681777,
+      "params": 20487,
+      "method": "MLP, full features, no augmentation"
+    },
+    {
+      "acc": 0.9973992197659298,
+      "macro_f1": 0.9974168850999131,
+      "latency_ms": 0.7203346666695628,
+      "params": 20487,
+      "method": "MLP, full features"
+    }
+  ]
+}

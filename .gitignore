@@ -1,0 +1,29 @@
+# --- not needed in the repository ---
+venv/
+__pycache__/
+*.pyc
+logs/
+# hand crops show our faces -> keep private (keypoints in data/landmarks.csv are enough)
+data/images/
+# downloaded automatically on first run
+models/hand_landmarker.task
+models/gesture_cnn.pt
+# LaTeX build files
+report/*.aux
+report/*.log
+report/*.out
+report/*.blg
+report/*.bbl
+report/*.brf
+report/main.pdf
+report/code/
+report_overleaf.zip
+# old / temporary
+presentation/Gesture_Control_EE604.pptx
+*.tmp
+~$*
+
+# study notes and leftovers of the old template
+VIVA_QA.md
+report/ieee_fullname.bst
+report/refs.bib

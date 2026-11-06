@@ -1,0 +1,30 @@
+{
+  "_note": "EDIT THIS FILE: names, roll numbers, emails, GitHub link. It is used by make_report.py and make_slides.py.",
+  "title": "Gesture Mouse and Air Keyboard: Robust Real-Time Computer Control with a Webcam using Invariant Hand-Keypoint Learning",
+  "short_title": "Mouse & Keyboard Control using Hand Gesture Recognition",
+  "course": "EE 604: Image Processing, IIT Kanpur, 2026",
+  "instructor": "Prof. Koteswar Rao Jerripothula",
+  "github": "https://github.com/gunasekharkaranam/gesture-mouse-keyboard",
+  "hardware": "EDIT: laptop CPU model, e.g. Intel Core i5-1235U, 8 GB RAM, no GPU",
+  "camera": "EDIT: e.g. built-in 720p laptop webcam",
+  "members": [
+    {
+      "name": "Guna Sekhar Subbarao Karanam",
+      "roll": "230537",
+      "email": "kgssekhar23@iitk.ac.in",
+      "contribution": "Gesture recognition: data-collection tool, invariant feature design, Gesture MLP training with augmentation, ablation study, baselines (rules, SVM, RF, kNN, image CNN) and leave-one-user-out evaluation."
+    },
+    {
+      "name": "VOOBA RAJKUMAR",
+      "roll": "231173",
+      "email": "rajvk23@iitk.ac.in",
+      "contribution": "Cursor control: stable anchor point, One-Euro / Kalman / moving-average filters, confidence + temporal voting, click / scroll / drag logic, recording and analysis of the live cursor sessions."
+    },
+    {
+      "name": "GBHUVANA REDDY",
+      "roll": "230408",
+      "email": "bhuvanar23@iitk.ac.in",
+      "contribution": "User interface and air keyboard with hover-lock, few-shot personalization, figures, report and presentation."
+    }
+  ]
+}

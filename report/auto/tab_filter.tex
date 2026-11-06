@@ -1,0 +1,16 @@
+\begin{table}[t]
+\centering\small
+\caption{Cursor smoothing on the same recorded hand motion (lower is better for all columns).}
+\label{tab:filter}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Filter & Jitter (px/frame) & Error moving (px) & Lag (ms) \\
+\midrule
+No filter (raw) & 4.21 & \textbf{15.19} & \textbf{0.00} \\
+Moving average (5) & 3.57 & 61.52 & 64.03 \\
+Kalman (const. velocity) & 3.66 & 37.64 & 32.02 \\
+\textbf{One-Euro (ours)} & \textbf{2.59} & 18.82 & 10.65 \\
+\bottomrule
+\end{tabular}}
+\end{table}

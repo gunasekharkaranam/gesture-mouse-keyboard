@@ -1,8 +1,8 @@
 """
 run_all.py
 ----------
-Runs EVERY automatic experiment, then builds the figures, the report and the
-slides. Run it after all members have recorded data (collect_data.py) and,
+Runs EVERY automatic experiment, then draws the figures.
+Run it after all members have recorded data (collect_data.py) and,
 optionally, after recording app logs (app.py --log).
 
     python run_all.py            # everything
@@ -14,7 +14,7 @@ Order matters:
   3. personalization per user     (personalize.py --user X)
   4. log analysis                 (experiments/analyze_logs.py logs/*.csv)
   5. final model + ablation       (train.py)  -> models/gesture_mlp.pt used by the app
-  6. figures, report, slides      (make_figures.py, make_report.py, make_slides.py)
+  6. figures                      (make_figures.py)
 """
 import argparse
 import csv
@@ -68,14 +68,11 @@ def main():
         print("\n(no logs in logs/ - record them with:  python app.py --log --dry-run)")
     ok["train"] = run(["train.py"])            # last: this is the model the app uses
     ok["figures"] = run(["make_figures.py"], required=False)
-    ok["report"] = run(["make_report.py"], required=False)
-    ok["slides"] = run(["make_slides.py"], required=False)
 
     print("\nSUMMARY")
     for k, v in ok.items():
         print(f"  {k:<25} {'OK' if v else 'FAILED (see messages above)'}")
-    print("\nReport  : report/  (main.pdf if LaTeX is installed, else upload report_overleaf.zip to Overleaf)")
-    print("Slides  : presentation/Gesture_Control_EE604.pptx")
+    print("\nResults : results/   Figures : results/figures/")
 
 
 if __name__ == "__main__":

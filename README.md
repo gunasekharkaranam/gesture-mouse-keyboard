@@ -1,6 +1,6 @@
 # Mouse & Keyboard Control using Hand Gesture Recognition (EE 604 course project)
 
-**Report:** [EE604_Gesture_Control_Report.pdf](EE604_Gesture_Control_Report.pdf) (LaTeX source in `report/`)  ·  **Slides:** `presentation/Gesture_Control_EE604_minimal.pptx`  ·  **Results:** `results/`
+**Report:** [EE604_Gesture_Control_Report.pdf](EE604_Gesture_Control_Report.pdf)  ·  **Results:** `results/`
 
 Team: Guna Sekhar Subbarao Karanam, Vooba Rajkumar, G. Bhuvana Reddy (EE 604 Image Processing, IIT Kanpur, 2026)
 
@@ -59,12 +59,7 @@ Use Python 3.10, 3.11 or 3.12 (MediaPipe has no wheels for newer versions yet). 
 ```bat
 run_all.bat          (or: python run_all.py)
 ```
-This runs all the training and analysis steps below, in the right order. It then builds:
-- `report/` and `report_overleaf.zip`: the CVPR-style write-up with your real numbers, tables, figures and the full code appendix. Upload the zip to Overleaf (New Project → Upload Project) and click Recompile.
-- `presentation/Gesture_Control_EE604.pptx`: the slides, with speaker notes.
-
-Before you run it, edit `team.json` (names, roll numbers, emails, GitHub link, hardware).
-`VIVA_QA.md` has likely viva questions with answers, plus the demo script.
+This runs all the training and analysis steps below, in the right order, and then draws the figures (`results/figures/`).
 
 ## Step-by-step (what run_all.py does, if you want to run parts by hand)
 
